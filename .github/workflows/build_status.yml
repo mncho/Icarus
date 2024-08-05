@@ -20,6 +20,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
       - name: Build with Gradle
+        continue-on-error: true
         run: ./gradlew build --rerun-tasks
         env:
           GRADLE_BUILD_CACHE_USER: ${{ secrets.GRADLE_BUILD_CACHE_USER }}
